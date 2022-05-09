@@ -22,9 +22,9 @@ class App extends Component {
   };
 
 
-  addUser = ({ name, position, company }) => {
+  addUser = ({ name, price, lessonDate }) => {
     this.setState({
-      users: [...this.state.users, { name, position, company }]
+      users: [...this.state.users, { name, price, lessonDate }]
     });
   };
 

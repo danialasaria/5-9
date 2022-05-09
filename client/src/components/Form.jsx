@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button,InputAdornment } from '@material-ui/core';
+// import { InputAdornment } from '@mui/material';
+// import InputAdornment from '@mui/material/InputAdornment';
 import axios from 'axios';
 
 class Form extends Component {
   state = {
     name: '',
-    position: '',
-    company: ''
+    price: '',
+    lessonDate: ''
   };
 
   handleChange = e => {
@@ -17,22 +19,22 @@ class Form extends Component {
 
   submit = e => {
     e.preventDefault();
-    const { name, position, company } = this.state;
+    const { name, price, lessonDate } = this.state;
     axios({
       url: '/add',
       method: 'POST',
       data: {
         name,
-        position,
-        company
+        price,
+        lessonDate,
       }
     })
       .then((response) => {
         this.props.addUser(response.data);
         this.setState({
           name: '',
-          company: '',
-          position: ''
+          price: '',
+          lessonDate: ''
         });
       })
       .catch(() => alert('Failed uploading data'))
@@ -40,7 +42,7 @@ class Form extends Component {
   render() {
     return (
       <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
-        <h2>Who are you?</h2>
+        <h2>Log your lessons</h2>
         <TextField
           id="standard-dense"
           value={this.state.name}
@@ -48,23 +50,22 @@ class Form extends Component {
           name="name"
           onChange={this.handleChange}
         />
-
         <TextField
-          name="company"
-          value={this.state.company}
+          name="lessonDate"
+          value={this.state.lessonDate}
           id="standard-dense"
           onChange={this.handleChange}
-          label="Company"
+          label="Date"
         />
 
         <TextField
-          name="position"
-          value={this.state.position}
+          name="price"
+          value={this.state.price}
           id="standard-dense"
           onChange={this.handleChange}
-          label="Position"
+          label="Price"
         />
-
+          
         <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>
 
       </form>

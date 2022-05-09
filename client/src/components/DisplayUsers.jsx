@@ -16,16 +16,16 @@ class DisplayUser extends Component {
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
-                            <TableCell align="right">Company</TableCell>
-                            <TableCell align="right">Position</TableCell>
+                            <TableCell align="right">Date</TableCell>
+                            <TableCell align="right">Price</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users.map(({ name, position, company }, key) => (
+                        {users.map(({ name, price, lessonDate }, key) => (
                             <TableRow key={key}>
                                 <TableCell component="th" scope="row"> {name ? name : 'No Name Found'} </TableCell>
-                                <TableCell align="right">{company ? company : 'No Company Found'}</TableCell>
-                                <TableCell align="right">{position ? position : 'No Position Found'}</TableCell>
+                                <TableCell align="right">{lessonDate ? lessonDate : 'No Date Found'}</TableCell>
+                                <TableCell align="right">{price ? price : 'No Price Found'}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
