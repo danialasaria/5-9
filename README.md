@@ -9,8 +9,11 @@ MERN (MongoDB, Express, React, NodeJS)
 
 # Instructions 
 
-Run Bakend and Frontend Simultaneously 
+Run frontend and backend Simultaneously 
 
 1. open terminal and run npm i && npm start
 2. open a new terminal and cd client && npm i && npm start
 
+# Hosting 
+
+Hosted frontend and backend on heroku  
