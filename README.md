@@ -5,7 +5,7 @@ A platform to help tutors keep track of their lessons
 
 # Languages
 
-MERN (MongoDB, Express, React, NodeJS) 
+MERN (MongoDB, Express, React, NodeJS) + CSS/HTML
 
 # Instructions 
 
