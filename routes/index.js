@@ -1,6 +1,6 @@
 const express = require('express');
 const { isEmpty } = require('lodash');
-const User = require('../models/user');
+const Lesson = require('../models/lesson');
 const router = express.Router();
 
 router.post('/add', async (req, res) => {
@@ -12,14 +12,14 @@ router.post('/add', async (req, res) => {
     }
     const { name, price, lessonDate } = req.body;
 
-    const newUser = new User({
+    const newLesson = new Lesson({
         name,
         price,
         lessonDate,
         date: Date.now()
     });
     try {
-        await newUser.save();
+        await newLesson.save();
         res.json({
             message: 'Data successfully saved',
             statusCode: 200,
@@ -37,13 +37,13 @@ router.post('/add', async (req, res) => {
 });
 
 
-router.get('/users', async (req, res) => {
+router.get('/lessons', async (req, res) => {
 
     try {
-        const users = await User.find({});
+        const lessons = await Lesson.find({});
 
         return res.json({
-            users
+            lessons
         });
     } catch (error) {
         return res.status(500).json({

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Button,InputAdornment } from '@material-ui/core';
+import { TextField, Button, InputAdornment } from '@material-ui/core';
 // import { InputAdornment } from '@mui/material';
 // import InputAdornment from '@mui/material/InputAdornment';
 import axios from 'axios';
@@ -30,7 +30,7 @@ class Form extends Component {
       }
     })
       .then((response) => {
-        this.props.addUser(response.data);
+        this.props.addLesson(response.data);
         this.setState({
           name: '',
           price: '',
@@ -56,6 +56,7 @@ class Form extends Component {
           id="standard-dense"
           onChange={this.handleChange}
           label="Date"
+          required
         />
 
         <TextField
@@ -64,6 +65,7 @@ class Form extends Component {
           id="standard-dense"
           onChange={this.handleChange}
           label="Price"
+          required
         />
           
         <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>

@@ -11,7 +11,6 @@ const routes = require('./routes');
 
 // Define Global Variables
 const app = express();
-const log = console.log;
 const PORT = process.env.PORT || 8080; // Step 1
 
 console.log(process.env.MONGODB_URI)
@@ -42,5 +41,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => {
-    log(`Server is starting at PORT: ${PORT}`);
+    console.log(`Server is starting at PORT: ${PORT}`);
 });

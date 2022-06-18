@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const LessonSchema = new Schema({
     name: String,
     price: String,
     lessonDate: String,
     date: Date
 });
 
-const User = mongoose.model('User', UserSchema);
+const Lesson = mongoose.model('Lesson', LessonSchema);
 
 
-module.exports = User;
+module.exports = Lesson;

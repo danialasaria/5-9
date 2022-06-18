@@ -1,38 +1,38 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
-import DisplayUsers from './components/DisplayUsers';
+import DisplayLessons from './components/DisplayLessons';
 import axios from 'axios';
 import './App.css';
 class App extends Component {
   state = {
-    users: []
+    lessons: []
   }
 
   componentDidMount = () => {
-    this.fetchUsers();
+    this.fetchLessons();
   };
 
-  fetchUsers = () => {
-    axios.get('/users')
+  fetchLessons = () => {
+    axios.get('/lessons')
       .then((response) => {
-        const { users } = response.data;
-        this.setState({ users: [...this.state.users, ...users] })
+        const { lessons } = response.data;
+        this.setState({ lessons: [...this.state.lessons, ...lessons] })
       })
-      .catch(() => alert('Error fetching new users'));
+      .catch(() => alert('Error fetching new lessons'));
   };
 
 
-  addUser = ({ name, price, lessonDate }) => {
+  addLesson = ({ name, price, lessonDate }) => {
     this.setState({
-      users: [...this.state.users, { name, price, lessonDate }]
+      lessons: [...this.state.lessons, { name, price, lessonDate }]
     });
   };
 
   render() {
     return (
       <div className="App">
-        <Form addUser={this.addUser}/>
-        < DisplayUsers users={this.state.users} />
+        <Form addLesson={this.addLesson}/>
+        < DisplayLessons lessons={this.state.lessons} />
 
       </div>
     );

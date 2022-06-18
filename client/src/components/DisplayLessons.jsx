@@ -5,14 +5,14 @@ const { isEmpty } = require('lodash');
 
 
 
-class DisplayUser extends Component {
+class DisplayLessons extends Component {
     render() {
-        const allUsers = this.props.users;
-        const users = !isEmpty(allUsers) ? allUsers : [];
+        const allLessons = this.props.lessons;
+        const lessons = !isEmpty(allLessons) ? allLessons : [];
 
         return (
-            <div className="users">
-                {!isEmpty(users) ? <Table>
+            <div className="lessons">
+                {!isEmpty(lessons) ? <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
@@ -21,7 +21,7 @@ class DisplayUser extends Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users.map(({ name, price, lessonDate }, key) => (
+                        {lessons.map(({ name, price, lessonDate }, key) => (
                             <TableRow key={key}>
                                 <TableCell component="th" scope="row"> {name ? name : 'No Name Found'} </TableCell>
                                 <TableCell align="right">{lessonDate ? lessonDate : 'No Date Found'}</TableCell>
@@ -35,4 +35,4 @@ class DisplayUser extends Component {
     }
 }
 
-export default DisplayUser;
+export default DisplayLessons;
