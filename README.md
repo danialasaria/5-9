@@ -11,8 +11,8 @@ MERN (MongoDB, Express, React, NodeJS) + CSS/HTML
 
 Run frontend and backend Simultaneously 
 
-1. open terminal and run npm i && npm start
-2. open a new terminal and cd client && npm i && npm start
+1. in root run npm i && npm start
+2. cd client && npm i && npm start
 
 # Hosting 
 
